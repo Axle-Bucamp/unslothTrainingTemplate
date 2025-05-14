@@ -1,3 +1,5 @@
 .env
 report/*
 dataset/*
+unsloth_compiled_cache
+__pycache__
