@@ -1,0 +1,46 @@
+{
+  "os": "Linux-6.1.0-34-amd64-x86_64-with-glibc2.36",
+  "python": "CPython 3.11.2",
+  "startedAt": "2025-05-15T07:21:15.595623Z",
+  "args": [
+    "--model_path",
+    "outputs/final_model"
+  ],
+  "program": "/home/pew/Documents/finetuning/train.py",
+  "codePath": "train.py",
+  "git": {
+    "remote": "git@github.com:Axle-Bucamp/unslothTrainingTemplate.git",
+    "commit": "df4cda7a92ea8f7ca59001edbb341800a218024d"
+  },
+  "email": "axle.bucamp@gmail.com",
+  "root": "/home/pew/Documents/finetuning",
+  "host": "debian",
+  "executable": "/home/pew/Documents/finetuning/.env/bin/python3",
+  "codePathLocal": "train.py",
+  "cpu_count": 6,
+  "cpu_count_logical": 6,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "209230790656",
+      "used": "45159350272"
+    }
+  },
+  "memory": {
+    "total": "10177699840"
+  },
+  "cpu": {
+    "count": 6,
+    "countLogical": 6
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Ti",
+      "memoryTotal": "17175674880",
+      "cudaCores": 4352,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.9"
+}

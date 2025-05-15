@@ -1,5 +1,33 @@
-.env
-report/*
-dataset/*
-unsloth_compiled_cache
-__pycache__
+# Python virtual env
+.env/
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Unsloth compiled cache
+unsloth_compiled_cache/
+
+# Dataset and reports (regenerated artifacts)
+dataset/
+report/
+
+# PyArrow / Parquet caches
+*.parquet
+
+# Logs and outputs
+*.log
+outputs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
