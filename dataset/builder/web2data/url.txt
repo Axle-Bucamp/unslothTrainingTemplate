@@ -1,3 +1,8 @@
-https://example.com
-https://www.python.org
-https://news.ycombinator.com
+https://hackers-arise.com/articles/
+https://courses.davidbombal.com/l/products
+https://www.kali.org/tools/
+https://www.justhacking.com/types/courses-and-paths/
+https://academy.networkchuck.com/courses
+https://www.exploit-db.com/
+https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+https://www.globalsuitesolutions.com/iso-standards-and-regulations-for-improving-cybersecurity/

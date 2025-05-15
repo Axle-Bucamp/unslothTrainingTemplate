@@ -9,3 +9,9 @@ pyarrow
 matplotlib
 seaborn
 tabulate
+tiktoken
+beautifulsoup4
+markdown
+numpy
+umap
+hdbscan

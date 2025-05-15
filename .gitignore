@@ -17,6 +17,9 @@ wandb/
 # PyArrow / Parquet caches
 *.parquet
 
+# source file
+*.txt
+
 # Logs and outputs
 *.log
 outputs/

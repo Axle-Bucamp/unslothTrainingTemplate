@@ -14,7 +14,7 @@ parser.add_argument("--dataset_path", type=str, default="dataset/enhance_train.p
 parser.add_argument("--text_field", type=str, default="transformed_prompt", help="Dataset field to use for training")
 parser.add_argument("--output_dir", type=str, default="outputs/final_model", help="Output model directory")
 parser.add_argument("--max_steps", type=int, default=60, help="Max training steps")
-parser.add_argument("--batch_size", type=int, default=10, help="Per device batch size")
+parser.add_argument("--batch_size", type=int, default=8, help="Per device batch size")
 parser.add_argument("--max_seq_length", type=int, default=4096, help="Max sequence length")
 parser.add_argument("--use_wandb", action="store_true", help="Enable Weights & Biases logging")
 args = parser.parse_args()
