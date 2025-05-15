@@ -11,7 +11,6 @@ __pycache__/
 unsloth_compiled_cache/
 
 # Dataset and reports (regenerated artifacts)
-dataset/
 report/
 wandb/
 
