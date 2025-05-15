@@ -13,6 +13,7 @@ unsloth_compiled_cache/
 # Dataset and reports (regenerated artifacts)
 dataset/
 report/
+wandb/
 
 # PyArrow / Parquet caches
 *.parquet
