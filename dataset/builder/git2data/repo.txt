@@ -50,6 +50,13 @@ https://github.com/USArmyResearchLab/Dshell
 https://github.com/infobyte/evilgrade
 https://dlrobertson.github.io/sylkie
 https://github.com/drwetter/testssl.sh
+https://github.com/13bm/GhidraMCP
+https://github.com/BurtTheCoder/mcp-maigret
+https://github.com/BurtTheCoder/mcp-shodan
+https://github.com/BurtTheCoder/mcp-dnstwist
+https://github.com/Gen-Verse/ReasonFlux
+https://github.com/MalBeacon/what-is-this-stealer
+https://github.com/linode/apl-core/tree/main
 https://github.com/sethsec/celerystalk
 https://kube-hunter.aquasec.com
 https://github.com/TheM4hd1/JCS
