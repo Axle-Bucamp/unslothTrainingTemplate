@@ -60,3 +60,13 @@ https://github.com/linode/apl-core/tree/main
 https://github.com/sethsec/celerystalk
 https://kube-hunter.aquasec.com
 https://github.com/TheM4hd1/JCS
+https://github.com/BishopFox/sliver
+https://github.com/fortra/impacket
+https://github.com/milo2012/pentest_scripts/tree/master
+https://github.com/prompt-security/ps-fuzz
+https://github.com/its-a-feature/Mythic
+https://github.com/MythicAgents/Apollo
+https://github.com/wazuh/wazuh
+https://github.com/xaitax/SploitScan
+https://github.com/threat9/routersploit
+https://github.com/screetsec/BruteSploit

@@ -33,7 +33,15 @@ def global_stats(df):
         log(nulls_text)
 
         # Plot nulls
-        nulls_filtered.plot(kind='barh', legend=False, figsize=(10, 6), title='Null Values per Column')
+        try:
+            if nulls_filtered is not None and not nulls_filtered.empty:
+                nulls_filtered.plot(kind='barh', legend=False, figsize=(10, 6), title='Null Values per Column')
+                plt.tight_layout()
+                plt.show()
+            else:
+                print("No null values to plot.")
+        except Exception as e:
+            print("Plotting error:", str(e))
         plt.tight_layout()
         plt.savefig(os.path.join(REPORT_DIR, "null_values_plot.png"))
         plt.close()

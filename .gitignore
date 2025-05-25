@@ -23,6 +23,7 @@ wandb/
 # Logs and outputs
 *.log
 outputs/
+.key
 
 # Jupyter checkpoints
 .ipynb_checkpoints/

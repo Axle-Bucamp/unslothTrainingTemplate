@@ -1,4 +1,2 @@
-re
 requests
 pandas
-urllib

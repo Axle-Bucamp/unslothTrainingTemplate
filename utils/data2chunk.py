@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pandas as pd
 import tiktoken
+from tqdm import tqdm
 
 # ───────────────────────────────────────────────────────────────────────────────
 # CONFIGURATION
@@ -52,27 +53,34 @@ def main():
     parser.add_argument("--input",  "-i", required=True, help="Input Parquet file")
     parser.add_argument("--output", "-o", required=True, help="Output Parquet file")
     parser.add_argument("--column", "-c", required=True, help="Text column to chunk")
-    parser.add_argument("--max_tokens", type=int, default=512, help="Max tokens per chunk")
+    parser.add_argument("--max_tokens", type=int, default=2048, help="Max tokens per chunk")
     parser.add_argument("--overlap",    type=int, default=64,  help="Token overlap between chunks")
+    parser.add_argument("--save_every", type=int, default=500, help="Save to output every N rows processed")
 
     args = parser.parse_args()
 
-    # load parquet
+    # Load input
     df = pd.read_parquet(args.input)
     if args.column not in df.columns:
         raise ValueError(f"Column '{args.column}' not in input")
 
-    # prepare tokenizer
+    # Prepare tokenizer
     enc = tiktoken.get_encoding(ENCODING_NAME)
 
+    output_path = Path(args.output)
+    if output_path.exists():
+        print(f"🟡 Output file already exists: {args.output} — appending to it.")
+        out_df = pd.read_parquet(output_path)
+    else:
+        out_df = pd.DataFrame()
+
     records = []
-    # For each row, chunk the text column
-    for idx, row in df.iterrows():
-        text = str(row[args.column] or "")
+    # Iterate with progress bar
+    for idx, row in tqdm(df.iterrows(), total=len(df), desc="🔨 Chunking rows"):
+        text = str(row[args.column] or "").replace('<|endoftext|>', '[END_OF_TEXT]')
         chunks = chunk_text(text, args.max_tokens, args.overlap, enc)
 
         for chunk_id, cs, ce, chunk_str in chunks:
-            # copy all other fields
             rec = {col: row[col] for col in df.columns if col != args.column}
             rec.update({
                 "original_index": idx,
@@ -83,10 +91,16 @@ def main():
             })
             records.append(rec)
 
-    # create DataFrame and save
-    out_df = pd.DataFrame(records)
-    out_df.to_parquet(args.output, index=False)
-    print(f"✅ Wrote {len(out_df)} chunk‑rows to {args.output}")
+        # Save every N rows
+        if (idx + 1) % args.save_every == 0 or idx + 1 == len(df):
+            if records:
+                chunk_df = pd.DataFrame(records)
+                out_df = pd.concat([out_df, chunk_df], ignore_index=True)
+                out_df.to_parquet(output_path, index=False)
+                print(f"💾 Intermediate save: {len(out_df)} total chunk-rows written to {args.output}")
+                records.clear()
+
+    print(f"\n✅ Finalized {len(out_df)} total chunk‑rows to {args.output}")
 
 if __name__ == "__main__":
     main()
