@@ -36,3 +36,4 @@ https://app.opencve.io/cve/?q=cvss40%3E%3D9
 https://app.opencve.io/cve/?q=cwe:CWE-79
 https://app.opencve.io/cve/?q=description%3A%27remote+code+execution%27
 https://app.opencve.io/cve/?q=userTag%3Atocheck
+https://www.exploit-db.com/
